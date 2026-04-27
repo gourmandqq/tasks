@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function(){
     const btnApply = document.getElementById("btnApply");
     const undoContainer = document.getElementById("undoContainer");
     const undoButton = document.getElementById("undoButton");
+    const btnDeleteAll = document.getElementById("btnDeleteAll");
     const countdownNumber = document.getElementById("countdownNumber");
     const circleProgress = document.getElementById("circleProgress");
 
@@ -266,6 +267,14 @@ document.addEventListener("DOMContentLoaded", function(){
     modalOverlay.addEventListener("click", (e) => {
         if (e.target === modalOverlay) {
             closeModal();
+        }
+    });
+
+    btnDeleteAll.addEventListener("click", () => {
+        if (tasks.length === 0) return;
+        if (confirm("Delete all tasks?")) {
+            tasks = [];
+            renderTasks();
         }
     });
 

@@ -67,6 +67,23 @@ header #select option{
     color: var(--purple-color);
 }
 
+.btn-delete-all {
+    background-color: transparent;
+    color: var(--purple-color);
+    border: 1px solid var(--purple-color);
+    border-radius: 5px;
+    padding: 0 15px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-delete-all:hover {
+    background-color: var(--purple-color);
+    color: var(--white-color);
+}
+
 main{
     padding-top: 30px;
     margin: auto;
