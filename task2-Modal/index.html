@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo App</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <header>
+        <span><h1>TODO LIST</h1></span>
+        <div class="search-filters">
+            <input type="text" class="search-input" placeholder="Search note...">
+            <select name="" id="select">
+                <option value="all">All</option>
+                <option value="complete">Complete</option>
+                <option value="incomplete">Incomplete</option>
+            </select>
+        </div>
+    </header>
+    
+    <main id="tasks"></main>
+    
+    <span class="new-task"><img src="img/plus.svg" alt=""></span>
+    
+    <div class="modal-overlay hidden" id="modalOverlay">
+        <div class="modal">
+            <h2>NEW NOTE</h2>
+            <input type="text" class="modal-input" id="modalInput" placeholder="Input your note...">
+            <div class="modal-buttons">
+                <button class="btn-cancel" id="btnCancel">CANCEL</button>
+                <button class="btn-apply" id="btnApply">APPLY</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="undo-container hidden" id="undoContainer">
+        <div class="undo-button" id="undoButton">
+            <div class="countdown-circle">
+                <svg viewBox="0 0 36 36">
+                    <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                    <path class="circle-progress" id="circleProgress" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                </svg>
+                <span class="countdown-number" id="countdownNumber">5</span>
+            </div>
+            <span class="undo-text">UNDO</span>
+            <span class="undo-arrow">↩</span>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
