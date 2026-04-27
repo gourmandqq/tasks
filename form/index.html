@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Contact Us</h2>
+        <form id="contactForm">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="firstName">First Name <span>*</span></label>
+                    <input type="text" id="firstName" name="firstName">
+                    <span class="error-message" id="error-firstName"></span>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name <span>*</span></label>
+                    <input type="text" id="lastName" name="lastName">
+                    <span class="error-message" id="error-lastName"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address <span>*</span></label>
+                <input type="email" id="email" name="email">
+                <span class="error-message" id="error-email"></span>
+            </div>
+
+            <div class="form-group">
+                <label>Query Type <span>*</span></label>
+                <div class="radio-group">
+                    <label class="radio-label">
+                        <input type="radio" name="queryType" value="general" id="queryGeneral">
+                        <span class="radio-custom"></span>
+                        General Enquiry
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="queryType" value="support" id="querySupport">
+                        <span class="radio-custom"></span>
+                        Support Request
+                    </label>
+                </div>
+                <span class="error-message" id="error-queryType"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Message <span>*</span></label>
+                <textarea id="message" name="message" rows="4"></textarea>
+                <span class="error-message" id="error-message"></span>
+            </div>
+
+            <div class="form-group">
+                <label class="checkbox-label">
+                    <input type="checkbox" id="consent" name="consent">
+                    <span class="checkbox-custom"></span>
+                    I consent to being contacted by the team <span>*</span>
+                </label>
+                <span class="error-message" id="error-consent"></span>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
