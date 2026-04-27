@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Select</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="select-wrapper">
+        <div class="select-header" id="selectHeader">
+            <span class="select-label" id="selectLabel">Menu Label</span>
+            <svg class="select-arrow" id="selectArrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+        <ul class="select-dropdown" id="selectDropdown">
+            <li class="select-option" data-value="label1">Label1</li>
+            <li class="select-option" data-value="label2">Label2</li>
+            <li class="select-option" data-value="label3">Label3</li>
+            <li class="select-option" data-value="label4">Label4</li>
+            <li class="select-option" data-value="label5">Label5</li>
+        </ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
