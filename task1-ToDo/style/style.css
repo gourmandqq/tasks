@@ -1,0 +1,358 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+    --black-color: #252525;
+    --white-color: #F7F7F7;
+    --purple-color: #6C63FF;
+}
+
+*{
+    font-family: Roboto;
+    box-sizing: border-box;
+}
+
+body{
+    max-width: 750px;
+    background-color: var(--black-color);
+    margin: auto;
+}
+
+header{
+    padding-top: 40px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+header h1{
+    color: var(--white-color);
+    padding-bottom: 18px;
+}
+
+header .search-input,
+header #select{
+    height: 38px;
+    border: none;
+    border-radius: 5px;
+}
+
+header .search-filters{
+    display: flex;
+    width: 100%;
+    gap: 15px;
+}
+
+header .search-input{
+    flex: 0 0 70%;
+    padding-left: 35px;
+    background-image: url('../img/loop.svg');
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: 10px center;
+    background-color: var(--black-color);
+    border: solid var(--white-color) 1px;
+    color: var(--white-color);
+}
+
+header #select{
+    flex: 30%;
+    background-color: var(--purple-color);
+    padding: 5px;
+    color: var(--white-color);
+    text-transform: uppercase;
+}
+
+header #select option{
+    background-color: var(--white-color);
+    color: var(--purple-color);
+}
+
+.btn-delete-all {
+    background-color: transparent;
+    color: var(--purple-color);
+    border: 1px solid var(--purple-color);
+    border-radius: 5px;
+    padding: 0 15px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-delete-all:hover {
+    background-color: var(--purple-color);
+    color: var(--white-color);
+}
+
+main{
+    padding-top: 30px;
+    margin: auto;
+    width: 70%;
+    color: var(--white-color);
+    font-size: 20px;
+}
+
+.task{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task .main-controls,
+.task .secondary-controls{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.task .main-controls img,
+.task .secondary-controls img{
+    cursor: pointer;
+}
+
+.hidden{
+    display: none !important;
+}
+
+.task .checkbox-text{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.task:not(:last-child) {
+    border-bottom: 1px solid var(--purple-color);
+    margin-bottom: 10px; 
+    padding-bottom: 10px;
+}
+
+input[type="checkbox"] {
+    accent-color: var(--purple-color);
+    width: 25px;
+    height: 25px;
+}
+
+.new-task{
+    position: absolute;
+    bottom: 30px;
+    right: 30%;
+    background-color: var(--purple-color);
+    padding: 9px 9px 6px 9px;
+    border-radius: 100px;
+    cursor: pointer;
+}
+
+.svg-icon,
+.svg-icon-red {
+    stroke: var(--white-color);
+    transition: stroke 0.3s ease;
+}
+
+.svg-icon:hover {
+    stroke: var(--purple-color);
+}
+
+.svg-icon-red:hover {
+    stroke: red;
+}
+
+.task:hover .main-controls {
+    display: flex;
+    transition: 4.3s ease;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal {
+    background-color: var(--black-color);
+    border: 2px solid var(--white-color);
+    border-radius: 15px;
+    padding: 25px 35px;
+    width: 420px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.modal h2 {
+    color: var(--white-color);
+    text-align: center;
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.modal-input {
+    background-color: var(--black-color);
+    border: 1px solid var(--white-color);
+    border-radius: 5px;
+    padding: 12px 18px;
+    color: var(--white-color);
+    font-size: 16px;
+    outline: none;
+}
+
+.modal-input::placeholder {
+    color: #888;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.btn-cancel, .btn-apply {
+    padding: 10px 25px;
+    border-radius: 5px;
+    border: 1px solid var(--purple-color);
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-cancel {
+    background-color: transparent;
+    color: var(--purple-color);
+}
+
+.btn-cancel:hover {
+    background-color: var(--purple-color);
+    color: var(--white-color);
+}
+
+.btn-apply {
+    background-color: var(--purple-color);
+    color: var(--white-color);
+}
+
+.btn-apply:hover {
+    background-color: #5a52d5;
+}
+
+.undo-container {
+    position: fixed;
+    bottom: 30px;
+    left: 30%;
+    transform: translateX(-50%);
+    z-index: 999;
+}
+
+.undo-button {
+    background-color: var(--purple-color);
+    border: 3px solid #7b73ff;
+    border-radius: 10px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.undo-button:hover {
+    background-color: #5a52d5;
+}
+
+.countdown-circle {
+    position: relative;
+    width: 36px;
+    height: 36px;
+}
+
+.countdown-circle svg {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+}
+
+.circle-bg {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.3);
+    stroke-width: 3;
+}
+
+.circle-progress {
+    fill: none;
+    stroke: var(--white-color);
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-dasharray: 100;
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 0.1s linear;
+}
+
+.countdown-number {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--white-color);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.undo-text {
+    color: var(--white-color);
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.undo-arrow {
+    color: var(--white-color);
+    font-size: 20px;
+}
+
+.task-completed span {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+.task-text-editable {
+    background-color: transparent;
+    border: 1px solid var(--purple-color);
+    border-radius: 4px;
+    padding: 4px 8px;
+    color: var(--white-color);
+    font-size: 20px;
+    outline: none;
+    min-width: 200px;
+}
+
+.checkbox-text span {
+    cursor: pointer;
+    user-select: none;
+}
+
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    gap: 15px;
+}
+
+.empty-state img {
+    width: 150px;
+    opacity: 0.7;
+}
+
+.empty-state span {
+    color: #888;
+    font-size: 16px;
+}
